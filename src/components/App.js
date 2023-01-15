@@ -13,7 +13,8 @@ class App extends React.Component {
             isEditProfileOpen: false,
             isAddPlacePopupOpen: false,
             isEditAvatarPopupOpen: false,
-            selectedCard: null,
+            isImagePopupOpen: false,
+            selectedCard: "",
         }
     }
 
@@ -35,10 +36,9 @@ class App extends React.Component {
         })
     }
 
-    setSelectedCard = () => {
+    setSelectedCard = (card) => {
         this.setState({
-            selectedCard: this.props.card,
-            isImagePopupOpen: !this.state.isImagePopupOpen,
+            selectedCard: card,
         })
     }
 
@@ -47,17 +47,15 @@ class App extends React.Component {
             isEditProfileOpen: false,
             isAddPlacePopupOpen: false,
             isEditAvatarPopupOpen: false,
-            isImagePopupOpen: false,
             selectedCard: "",
         })
     }
 
     render() {
-        console.log(this.state.selectedCard)
         return (
             <>
                 <Header />
-        
+                
                 <Main onEditProfile={this.handleEditProfileClick} onAddPlace={this.handleAddPlaceClick} onEditAvatar={this.handleEditAvatarClick} onCardClick={this.setSelectedCard} />
         
                 <Footer />

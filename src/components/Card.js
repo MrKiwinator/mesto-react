@@ -2,7 +2,6 @@ import React from "react";
 
 class Card extends React.Component {
     handleCardClick = () => {
-        console.log(this.props.card)
         this.props.onCardClick(this.props.card);
     }
 

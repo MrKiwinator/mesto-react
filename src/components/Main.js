@@ -17,7 +17,6 @@ class Main extends React.Component {
     componentDidMount () {
         Promise.all([api.getUserInfo(), api.getCards()])
             .then(([user, cards]) => {
-                console.log(user, cards)
                 this.setState({
                     userName: user.name,
                     userDescription: user.about,
