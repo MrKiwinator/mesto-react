@@ -2,7 +2,7 @@
 @import url("./vendor/normalize.css");
 
 /* Inter Font (400, 500, 900) */
-@import url("./fonts/inter/inter.css");
+@import url("./vendor/fonts/inter/inter.css");
 
 /* Common Styles */
 @import url("./blocks/root/root.css");

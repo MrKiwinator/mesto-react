@@ -24,6 +24,7 @@ class Main extends React.Component {
                     cards: cards,
                 })
             })
+            .catch((err) => console.log(err))
     }
     
     render () {

@@ -14,7 +14,7 @@ class App extends React.Component {
             isAddPlacePopupOpen: false,
             isEditAvatarPopupOpen: false,
             isImagePopupOpen: false,
-            selectedCard: "",
+            selectedCard: null,
         }
     }
 
@@ -47,7 +47,7 @@ class App extends React.Component {
             isEditProfileOpen: false,
             isAddPlacePopupOpen: false,
             isEditAvatarPopupOpen: false,
-            selectedCard: "",
+            selectedCard: null,
         })
     }
 
