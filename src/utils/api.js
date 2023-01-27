@@ -24,9 +24,9 @@ class Api {
             method: "PATCH",
             headers: this._headers,
             body: JSON.stringify({
-                name: userData.user_name,
-                about: userData.user_status,
-                avatar: userData.user_avatar
+                name: userData.name,
+                about: userData.about,
+                avatar: userData.avatar
             })
         })
             .then(this._checkResponse)
@@ -69,6 +69,14 @@ class Api {
             headers: this._headers
         })
             .then(this._checkResponse);
+    }
+
+    changeLikeCardStatus(cardId, isLiked) {
+        if (isLiked) {
+            return this.setLike(cardId);
+        } else {
+            return this.deleteLike(cardId);
+        }
     }
 
     setLike(cardId) {
