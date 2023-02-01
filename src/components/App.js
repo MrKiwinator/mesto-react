@@ -17,7 +17,7 @@ function App() {
     const [isEditAvatarOpen, setEditAvatarStatus] = React.useState(false);
     const [selectedCard, setSelectedCard] = React.useState(null);
 
-    const [currentUser, setCurrentUser] = React.useState("");
+    const [currentUser, setCurrentUser] = React.useState({});
     const [cards, setCards] = React.useState([]);
 
 
@@ -72,8 +72,6 @@ function App() {
         api.setUserInfo(userInfo)
             .then((res) => {
                 setCurrentUser(res);
-            })
-            .then(() => {
                 closeAllPopups();
             })
             .catch((err) => console.log(err))
@@ -83,8 +81,6 @@ function App() {
         api.setUserAvatar(userInfo.avatar)
             .then((res) => {
                 setCurrentUser(res);
-            })
-            .then(() => {
                 closeAllPopups();
             })
             .catch((err) => console.log(err))
@@ -94,10 +90,9 @@ function App() {
         api.addCard(card)
             .then((newCard) => {
                 setCards([newCard, ...cards]);
-            })
-            .then(() => {
                 closeAllPopups();
             })
+            .catch((err) => console.log(err))
     }
 
     return (
